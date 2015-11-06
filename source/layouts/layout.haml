@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title Electro Dacus
+    %meta{charset: 'utf-8'}
+    %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
+    = stylesheet_link_tag :all
+    %link{rel: :stylesheet, type: 'text/css', href: 'http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css'}
+  %body
+    #home{"data-role" => "page"}
+      %div{"data-role" => "header"}
+        - if current_page.path != 'index.html'
+          %a{"data-icon" => "home", :href => "/", 'data-iconpos' => "notext"} 
+            Home
+        %h1= current_page.data.title  
+      %div{"data-role" => "content"}  
+        =yield
+    = javascript_include_tag :all
+    = javascript_include_tag "http://code.jquery.com/jquery-2.1.4.min.js"    
+    = javascript_include_tag "http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"
+

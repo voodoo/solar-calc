@@ -1,0 +1,43 @@
+---
+title: Monitoring
+---
+- m  = monitoring
+- avg = m.inject( nil ) { |sum,x| sum ? sum+x : x } / m.size
+- min = m.min
+- max = m.max
+%ul{"data-inset" => "true", "data-role" => "listview"}
+  %li
+    %h3
+      = m.size
+      cells
+    %p
+      Min: 
+      %b(style='color:red')= min
+      Max: 
+      %b(style='color:green')= max  
+    %p.ui-li-aside
+      Average:
+      %b= avg.round(2) 
+    /.ui-li-aside Average:
+
+
+%ul{"data-inset" => "true", "data-role" => "listview"}
+  - m.each_with_index do |li,idx|
+    %li
+      %h3
+        - if li == min
+          %span(style='color:red')= li
+        - elsif li == max
+          %span(style='color:green')= li
+        - else
+          = li
+
+      %p.ui-li-aside
+        - diff = ((li - avg).round(2) * 100).round(2)
+        - if diff > 0
+          %span(style='color:green')= diff
+        - elsif diff < 0
+          %span(style='color:red')= diff  
+        - else
+          = diff        
+
