@@ -9,17 +9,12 @@ configure :development do
 end
 
 helpers do
-
-
-
   def monitoring
     (1..8).map do |i|
       (2.0 + BigDecimal.new(Random.new().rand.to_s).round(2)).to_f
     end
- 
   end
 end
-
 
 
 
@@ -30,6 +25,18 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 # Build-specific configuration
+
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+  # deploy.branch   = 'custom-branch' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+end
+
+
 configure :build do
   activate :directory_indexes
   # For example, change the Compass output style for deployment
@@ -46,4 +53,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+
+
 end
