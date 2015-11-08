@@ -11,7 +11,8 @@ end
 helpers do
   def monitoring
     (1..8).map do |i|
-      (2.0 + BigDecimal.new(Random.new().rand.to_s).round(2)).to_f
+      Random.rand(2.0..3.0).round(2)
+      #(2.0 + BigDecimal.new(Random.new().rand.to_s).round(2)).to_f
     end
   end
 end
@@ -36,9 +37,10 @@ activate :deploy do |deploy|
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end
 
+activate :directory_indexes
+
 
 configure :build do
-  activate :directory_indexes
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
@@ -50,7 +52,8 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
-
+  set :relative_links, true
+  
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 

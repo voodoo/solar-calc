@@ -33,6 +33,7 @@ title: Monitoring
           = li
 
       %p.ui-li-aside
+        /Change:
         - diff = ((li - avg).round(2) * 100).round(2)
         - if diff > 0
           %span(style='color:green')= diff
