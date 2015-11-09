@@ -14,7 +14,7 @@
     #home{"data-role" => "page"}
       %div{"data-role" => "header"}
         - if current_page.path != 'index.html'
-          = link_to "Home", "/", data: {icon: :home, iconpos: :notext}
+          = link_to "Home", "/index.html", data: {icon: :home, iconpos: :notext}
         %h1= current_page.data.title  
       %div{"data-role" => "content"}  
         =yield
