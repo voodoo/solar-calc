@@ -1,0 +1,25 @@
+need:
+  - 
+    - Lights
+    - 50
+    - 12
+
+
+want:
+  - 
+    - Fridge
+    - 80
+    - 6   
+  - 
+    - Coffee
+    - 400
+    - 1 
+lux:
+  - 
+    - AC
+    - 1000
+    - 4
+  - 
+    - Dryer
+    - 1200
+    - 2   

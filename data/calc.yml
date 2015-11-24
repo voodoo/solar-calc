@@ -1,0 +1,11 @@
+panels:
+  insolation: 3
+  size: 250
+  inefficiency: 1.5
+batts:
+  autonomy: 5
+  amp_hour: 100
+  depth_of_discharge: .50
+  volts: 12
+# system:
+#   efficiency: .98

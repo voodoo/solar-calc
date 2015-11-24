@@ -1,0 +1,7 @@
+%li.list-group-item
+  %span.badge
+    = number_of_panels(sum_of_totals(sections))
+  %b= section
+  (
+  = sum_of_totals(sections)
+  )

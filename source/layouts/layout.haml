@@ -1,21 +1,18 @@
 !!! 5
 %html
   %head
-    %title Electro Dacus
+    %title Solar
     %meta{charset: 'utf-8'}
     %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
     = stylesheet_link_tag :all
-    %link{rel: :stylesheet, type: 'text/css', href: 'http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css'}
+    %link{rel: :stylesheet, type: 'text/css', href: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'}
     = javascript_include_tag "http://code.jquery.com/jquery-2.1.4.min.js"    
-    = javascript_include_tag "http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"
+    = javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
     = javascript_include_tag :all
+    = stylesheet_link_tag :all
 
   %body
-    #home{"data-role" => "page"}
-      %div{"data-role" => "header"}
-        - if current_page.path != 'index.html'
-          = link_to "Home", "/index.html", data: {icon: :home, iconpos: :notext}
-        %h1= current_page.data.title  
-      %div{"data-role" => "content"}  
-        =yield
+    = partial 'partials/toolbar'
+    .container
+      =yield
 

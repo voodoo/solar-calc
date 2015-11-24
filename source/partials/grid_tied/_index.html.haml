@@ -1,0 +1,10 @@
+.panel.panel-default
+  .panel-heading 
+    %b Grid tied
+  %ul.list-group
+    = partial 'partials/grid_tied/number', locals: {sections: [:need], section: "Need"}
+    = partial 'partials/grid_tied/number', locals: {sections: [:need,:want], section: "Want"}
+    = partial 'partials/grid_tied/number', locals: {sections: [:need,:want,:lux], section: "Luxury"}
+
+  .panel-footer
+    Watts * $4.00

@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-heading 
+    %b Batteries
+    Amp Hours
+  %ul.list-group
+    = partial 'partials/batts/number', locals: {sections: [:need], section: "Need"}
+    = partial 'partials/batts/number', locals: {sections: [:need,:want], section: "Want"}
+    = partial 'partials/batts/number', locals: {sections: [:need,:want,:lux], section: "Luxury"}
+
+  .panel-footer
+    (Watt hours * Autonomy) / System Voltage = Amp Hours

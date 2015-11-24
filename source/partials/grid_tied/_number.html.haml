@@ -1,0 +1,10 @@
+%li.list-group-item
+  %span.badge
+    = number_to_currency number_of_panels(sum_of_totals(sections)) * data.calc.panels[:size] * 4.00
+  %b= section
+  (
+  = number_of_panels(sum_of_totals(sections))
+  *
+  = data.calc.panels[:size]
+  * $4.00
+  )

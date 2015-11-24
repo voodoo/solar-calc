@@ -1,32 +1,15 @@
 ---
-title: Electro Dacus
+title: Solar Calculator
 ---
 
-%ul{"data-inset" => "true", "data-role" => "listview"}
-  %li(data-icon="search")
-    = link_to "/monitoring.html" do
-      %h3 
-        Monitoring        
-      %p 
-        Battery monitoring     
-      %p.ui-li-count
-        85%
-  %li(data-icon="edit")
-    = link_to "/params.html" do
-      %h3 Parameters
-      %p Set parameters
-  %li(data-icon="gear")
-    = link_to "/device.html" do
-      %h3 Device
-      %p Device settings
-  %li(data-icon="check")
-    = link_to "/diagnostics.html" do
-      %h3 Diagnostics
-  %li(data-icon="info")
-    = link_to "/about.html" do
-      %h3
-        About
-      %p 
-        %b Electro Dacus
-        %em Solar Battery Management System   
-       
+= partial 'partials/watts/index'
+= partial 'partials/panels/index'
+%p
+  .btn-group{"aria-label" => "...", :role => "group"}
+    %button.btn.btn-default.active{:type => "button"} Grid-tied
+    %button.btn.btn-default{:type => "button"} Off-grid
+    %button.btn.btn-default{:type => "button"} Hybrid
+
+#grid-tied= partial 'partials/grid_tied/index'
+
+= partial 'partials/batts/index'

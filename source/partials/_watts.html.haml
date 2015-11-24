@@ -1,0 +1,22 @@
+%h2= title
+%table.table.table-striped.table-bordered
+  %tr
+    %th Name
+    %th Watts
+    %th Hours
+    %th Watt Hours
+    %th Totals
+  - data.watts[items].each do |item|
+    - name, watts, hours = item
+    %tr
+      %td= name
+      %td= watts
+      %td= hours
+      %td(width="100")= watts * hours
+      %td(width="100")
+  %tr
+    %td(colspan="3")
+    %td
+      %b= sum_of(items)
+    %td
+      %b= sum_of_totals totals     

@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading 
+    %b Panels
+  %ul.list-group
+    = partial 'partials/panels/number', locals: {sections: [:need], section: "Need"}
+    = partial 'partials/panels/number', locals: {sections: [:need,:want], section: "Want"}
+    = partial 'partials/panels/number', locals: {sections: [:need,:want,:lux], section: "Luxury"}
+
+  .panel-footer
+    %b(title="for number of panels (rounded up)") Formula 
+    \=
+    Watt hours
+    \/
+    = google_it 'Insolation', 'solar insolation map' 
+    %b= data.calc.panels[:insolation]
+    \/ 
+    Size of Panels
+    %b= data.calc.panels[:size]
+    watts

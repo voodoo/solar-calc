@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-heading 
+    %b Watt Hours
+    %small by category
+  .panel-body
+    = partial 'partials/watts/category', locals: {title: "Needs", items: :need, totals: [:need]}
+    = partial 'partials/watts/category', locals: {title: "Wants", items: :want, totals: [:need,:want]}
+    = partial 'partials/watts/category', locals: {title: "Luxury", items: :lux, totals: [:need,:want,:lux]}

@@ -1,3 +1,6 @@
+require "helpers/watts_helper"
+helpers WattsHelper
+
 
 
 # Automatic image dimensions on image_tag helper

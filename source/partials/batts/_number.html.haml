@@ -1,0 +1,10 @@
+%li.list-group-item
+  %span.badge
+    - total = sum_of_totals(sections)
+    = (total * data.calc.batts[:autonomy]) / system_volts(total)
+  %b
+    = sum_of_totals(sections)
+    *
+    = data.calc.batts[:autonomy]
+    \/
+    = system_volts(sum_of_totals(sections))
